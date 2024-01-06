@@ -6,27 +6,29 @@ import Home from "../images/icons/house-chimney.png";
 import Tv from "../images/icons//screen.png";
 import Sport from "../images/icons/tennis.png";
 import Category from "../images/icons//category.png";
+import { Link } from "react-router-dom";
 
 function Menubar() {
   const [visible, setVisible] = useState(false);
   return (
-    <div className=" w-[8%] flex flex-col  items-center sticky top-0 hover:bg-gradient-to-l from-black relative z-10">
-      <div className="flex flex-col items-center ">
-        <img className="w-12 mt-8 cursor-pointer " src={LOGO} alt="logo" />
-        <button className="bg-yellow-700/50 px-2  opacity-80 my-2 rounded-lg text-white text-xs">
+    <div className="pl-4  h-screen relative hover:w-[30rem] hover:bg-gradient-to-r hover:from-gray-950 to-transparent z-50">
+      <div className="flex flex-col ">
+        <Link to='/'> <img className="w-12 mt-8 ml-2 cursor-pointer " src={LOGO} alt="logo" />
+</Link>
+        <button className="bg-yellow-700/50 w-20 opacity-80 my-2 rounded-lg text-white text-xs">
           Subscribe &gt;
         </button>
       </div>
-      <div className="w-full ml-12 ">
-        <ul
-          className="ml-6"
-          onMouseOver={() => {
-            setVisible(true);
-          }}
-          onMouseLeave={() => {
-            setVisible(false);
-          }}
-        >
+      <div
+        className="w-full"
+        onMouseOver={() => {
+          setVisible(true);
+        }}
+        onMouseLeave={() => {
+          setVisible(false);
+        }}
+      >
+        <ul className="ml-6 hover:w-32">
           <li className="  items-center">
             {" "}
             <img
@@ -39,7 +41,7 @@ function Menubar() {
                 id="user"
                 className="text-white text-xl  mx-4 absolute -mt-[70px] ml-12 w-full hover:text-2xl font-bold cursor-pointer"
               >
-                My Space
+               <Link to='login'>My Space</Link>
               </p>
             )}
           </li>
@@ -55,7 +57,7 @@ function Menubar() {
                 id="user"
                 className="text-white text-xl  mx-4 absolute -mt-[70px] ml-12 w-full hover:text-2xl font-bold cursor-pointer"
               >
-                Search
+               <Link to='search'> Search</Link>
               </p>
             )}
           </li>
@@ -71,7 +73,7 @@ function Menubar() {
               id="user"
               className="text-white text-xl  mx-4 absolute -mt-[70px] ml-12 w-full hover:text-2xl font-bold cursor-pointer"
             >
-              Home
+              <Link to='/'>Home</Link>
             </p>
           )}
           <li>

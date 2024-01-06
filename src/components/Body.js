@@ -1,15 +1,17 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 import Menubar from "./Menubar";
-import PrimaryContainer from "./PrimaryContainer";
-import SecondaryContainer from "./SecondaryContainer";
+import Footer from "./Footer";
 
 function Body() {
   return (
     <div className=" bg-slate-950  ">
-      <Menubar />
-      <div className=" ml-[8%]">
-        <PrimaryContainer />
-        <SecondaryContainer />
+      <div className="">
+        <div className="fixed z-50">
+          <Menubar />
+        </div>
+        <Outlet />
+        <Footer />
       </div>
     </div>
   );
