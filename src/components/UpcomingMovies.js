@@ -14,13 +14,13 @@ function UpcomingMovies() {
   
     return (
       <div className="  bg-slate-950 z-10 -mt-6">
-        <h1 className="text-xl py-8 mt-3 flex items-center align-middle font-bold">
+        <h1 className="md:text-xl md:py-8 py-5 mt-3 flex items-center align-middle font-bold">
           Upcoming Movies
         </h1>
         <div className="flex overflow-x-scroll  no-scrollbar">
           {upcomingMovies.map((e, index) => {
             return (
-              <div className=" flex" onClick={()=>{dispatch(addMovieDetail(e))}}>
+              <div className=" flex mr-4" key={e.poster_path} onClick={()=>{dispatch(addMovieDetail(e))}}>
                 <Link to='movies'> <MovieCard key={e.id} poster={e.poster_path } /></Link>
               </div>
             );

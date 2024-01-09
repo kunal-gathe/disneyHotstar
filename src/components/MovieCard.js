@@ -2,8 +2,8 @@ import React from 'react'
 
 function MovieCard({poster}) {
   return (
-    <div className=' w-60 '>
-      <img  src={`https://image.tmdb.org/t/p/original${poster}`} className='w-full pr-6 h-52 cursor-pointer' alt='poster' />
+    <div className=' md:w-60 w-40 '>
+      <img  src={`https://image.tmdb.org/t/p/original${poster}`} className='w-full md:pr-6 h-40 cursor-pointer' alt='poster' />
     </div>
   )
 }

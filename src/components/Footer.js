@@ -5,7 +5,7 @@ import TW from '../images/icons/twitter.png'
 function Footer() {
   return (
     <>
-      <div className="text-white pl-32 flex justify-between mt-28 bg-slate-950 ">
+      <div className="hidden text-white pl-32 md:flex justify-between mt-28 bg-slate-950 ">
         <div>
           <h1 className="font-bold mb-8 text-lg cursor-pointer">Company</h1>
           <ul className="opacity-55">
@@ -26,7 +26,7 @@ function Footer() {
             <li>Share Feedback</li>
           </ul>
         </div>
-        <div>
+        <div >
           <h1 className="font-bold mb-8 text-lg cursor-pointer ">Connect With Us</h1>
           <ul className="flex flex-row">
             <li className="mb-3 cursor-pointer  mr-2 w-6"><img src={FB} alt="fb"/></li>
@@ -34,7 +34,7 @@ function Footer() {
           </ul>
         </div>
       </div>
-      <div  className="text-white pl-32 flex justify-between mt-8 pb-12  ">
+      <div  className="hidden text-white pl-32 md:flex justify-between mt-8 pb-12  ">
         <div className="w-60 opacity-55" >
           <p>
             0 2023 STAR. All Rights Reserved. Terms Of Use Privacy Policy FAQ

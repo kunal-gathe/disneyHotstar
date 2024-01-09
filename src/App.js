@@ -8,6 +8,10 @@ import Login from "./components/Login";
 import Error from "./components/Error";
 import MoviesDtails from "./components/MoviesDtails";
 import Search from "./components/Search";
+import Tv from "./components/Tv";
+import TvShows from "./components/TvShows";
+import Category from "./components/Category";
+import Profile from "./components/Profile";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -28,16 +32,44 @@ function App() {
           element: <MoviesDtails />,
         },
         {
+          path: "/serial",
+          element: <TvShows />,
+        },
+        {
           path: "/search",
           element: <Search />,
+          children: [
+            {
+              path: "movies",
+              element: <MoviesDtails />,
+            },
+          ],
         },
+        {
+          path: "/tv",
+          element: <Tv />,
+          children:[
+            {
+              path:"serial",
+              element: <TvShows />
+            }
+          ]
+        },
+        {
+          path: "Category",
+          element: <Category />
+        },
+        {
+          path: "userprofile",
+          element: <Profile />
+        }
       ],
-      errorElement: <Error />
+      // errorElement: <Error />,
     },
   ]);
 
   return (
-    <div className="overflow-y-scroll no-scrollbar">
+    <div className="overflow-y-scroll no-scrollbar bg-slate-950">
       <Provider store={store}>
         <RouterProvider router={appRouter} />
       </Provider>

@@ -24,12 +24,11 @@ function VideoBackground({ id }) {
     getBackgroundVideo(id);
   }, []);
   return (
-    <div>
-      <h1>Hello</h1>
+    <div className="">
       <iframe
-        width="1800"
-        height="900"
-        className="w-screen aspect-video -mt-40"
+        width="1100"
+        height="850"
+        className="w-screen aspect-video md:-mt-40 -mt-[22rem]"
         src={`https://www.youtube.com/embed/${trailer}?autoplay=1&mute=1&controls=0&&showinfo=0&rel=0`}
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; modestbranding; encrypted-media; gyroscope; picture-in-picture; web-share"

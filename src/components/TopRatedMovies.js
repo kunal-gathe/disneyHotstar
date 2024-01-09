@@ -14,16 +14,16 @@ function TopRatedMovies() {
 
   return (
     <div className="  bg-slate-950 z-10 -mt-6">
-      <h1 className="text-xl py-8 flex mt-3 items-center align-middle font-bold">
+      <h1 className="md:text-xl md:py-8 py-5 flex mt-3 items-center align-middle font-bold">
         Top Rated Added
       </h1>
       <div className="flex overflow-x-scroll   no-scrollbar">
         {topMovies.map((e, index) => {
             if(index < 5) return null
           return (
-            <div className="">
+            <div className="" key={e.poster_path}>
               <button className="bg-blue-500 relative z-20  w-12 py-1 px-2 font-semibold text-sm overflow-x-scroll no-scrollbar m-2 rounded-lg h-8">Free</button>
-              <div className="-mt-11" onClick={()=>{ dispatch(addMovieDetail(e))}}>
+              <div className="-mt-11 mr-4" key={e.id} onClick={()=>{ dispatch(addMovieDetail(e))}}>
               <Link to='movies'> <MovieCard key={e.id} poster={e.poster_path } /></Link>
               </div>
             </div>
